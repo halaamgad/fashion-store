@@ -1,0 +1,380 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Velvet Catalog</title>
+<style>
+:root {
+            --a: #faebe8;
+            /* للهيدر والفوتر */
+            --b: #ebcebb9a;
+            /* للبودى */
+            --g: black;
+            /* للجمل الكبيرة */
+            --h: #3f1f10;
+            /* للكلام الصغير */
+            --x: Copperplate, Papyrus, fantasy;
+        }
+body {
+    margin: 0;
+    font-family: var(--x);
+    background-color: var(--b);
+}
+
+/* HEADER */
+ .header {
+            width: 100%;
+            height: 115px;
+            background-color: var(--a);
+            color: var(--h);
+            font-family: var(--x);
+            display: flex;
+            gap: 10px;
+           
+        }
+
+        .header-item {
+            margin: 45px 20px;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: var(--h);
+        }
+
+        .header-item:hover {
+            transform: translateY(-3px);
+
+        }
+
+        .websitename {
+            width: 10%;
+            height: 50px;
+            margin-left: 780px;
+            color: var(--h);
+            font-family: var(--x);
+            text-shadow: 0 4px 10px var(--h);
+        }
+
+/* LAYOUT */
+.container {
+    display: flex;
+    
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    background-color: var(--a);
+    padding: 20px;
+    height: 100vh;
+    
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    background-color: var(--b);
+    cursor: pointer;
+    font-family: var(--x);
+}
+
+.sidebar button:hover {
+    background-color: #d8b6a3;
+    color: palevioletred;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.category {
+    display: none;
+}
+
+.category.active {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* CARDS */
+.card {
+    background-color: var(--a);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: var(--g);
+}
+
+.card p {
+    color: var(--h);
+}
+
+.price {
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+.footer {
+            width: 100%;
+            height: 550px;
+            margin-top: 10px;
+            background-color: var(--a);
+            font-family: var(--x);
+            color: var(--h);
+            clear: both;
+        }
+
+        .boxfooter {
+            width: 28%;
+            height: 300px;
+            
+            margin: 15px 15px;
+            padding: 5px 15px;
+            float: left;
+            font-family: var(--x);
+            color: var(--h);
+        }
+
+</style>
+</head>
+
+<body>
+<div class="header">
+        <a href="Home.html" class="header-item"><strong><u>Home</u></strong></a>
+        <a href="catlog.html" class="header-item"><strong><u>Catalog</u></strong></a>
+        <a href="about.html" class="header-item"><strong><u>About</u></strong></a>
+        <a href="contactus.html" class="header-item"><strong><u>ContactUs</u></strong></a>
+        <div class="websitename">
+            <h1> Velvet
+                <img src="brand.png" alt="" width="30px" height="30px" style="margin-left: 90px; ">
+
+            </h1>
+        </div>
+    </div>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <button onclick="showCategory('pants')">Pants</button>
+        <button onclick="showCategory('shirts')">Shirts</button>
+        <button onclick="showCategory('dresses')">Dresses</button>
+        <button onclick="showCategory('skirts')">Skirts</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- PANTS -->
+        <div id="pants" class="category active">
+            <div class="card">
+                <img src="classicpants.png" style="filter: drop-shadow(0 0 5px #8f807f) drop-shadow(0 0 5px #8f807f)">
+                <h3>Classic Pants</h3>
+                <p>Elegant everyday wear</p>
+                <p class="price">$35</p>
+            </div>
+            <div class="card">
+                <img src="WideLeg.png" style="height: 85%; filter: drop-shadow(0 0 5px white) drop-shadow(0 0 5px white)">
+                <h3>Wide Leg</h3>
+                <p>Comfort & style</p>
+                <p class="price">$40</p>
+            </div>
+            <div class="card">
+                <img src="Jeans.png" style="filter: drop-shadow(0 0 5px #90a2b0) drop-shadow(0 0 5px #90a2b0)">
+                <h3>Jeans</h3>
+                <p>Casual look</p>
+                <p class="price">$30</p>
+            </div>
+            <div class="card">
+                <img src="formalpants.png" style="filter: drop-shadow(0 0 5px black) drop-shadow(0 0 5px black)">
+                <h3>Formal Pants</h3>
+                <p>Office style</p>
+                <p class="price">$50</p>
+            </div>
+        </div>
+
+        <!-- SHIRTS -->
+        <div id="shirts" class="category">
+            <div class="card">
+                <img src="Basic Shirt.png" style="filter: drop-shadow(0 0 5px black) drop-shadow(0 0 5px black)">
+                <h3>Basic Shirt</h3>
+                <p>Simple & clean</p>
+                <p class="price">$20</p>
+            </div>
+            <div class="card">
+                <img src="Oversized.png" style="filter: drop-shadow(0 0 5px black) drop-shadow(0 0 5px black)">
+                <h3>Oversized</h3>
+                <p>Relaxed fit</p>
+                <p class="price">$25</p>
+            </div>
+            <div class="card">
+                <img src="formaltop.png" style="filter: drop-shadow(0 0 5px #9ca0b9) drop-shadow(0 0 5px #9ca0b9)">
+                <h3>Formal Shirt</h3>
+                <p>Professional look</p>
+                <p class="price">$30</p>
+            </div>
+            <div class="card">
+                <img src="Printed Shirt.png" style="filter: drop-shadow(0 0 5px #191011) drop-shadow(0 0 5px #191011)">
+                <h3>Printed Shirt</h3>
+                <p>Trendy design</p>
+                <p class="price">$28</p>
+            </div>
+        </div>
+
+        <!-- DRESSES -->
+        <div id="dresses" class="category">
+            <div class="card">
+                <img src="Evening Dress.png" style="margin-top: 150px; filter: drop-shadow(0 0 5px #5d1523) drop-shadow(0 0 5px #5d1523)">
+                <h3>Evening Dress</h3>
+                <p>Elegant nights</p>
+                <p class="price">$70</p>
+            </div>
+            <div class="card">
+                <img src="Casual Dress.png" style="filter: drop-shadow(0 0 5px white) drop-shadow(0 0 5px white)">
+                <h3>Casual Dress</h3>
+                <p>Daily wear</p>
+                <p class="price">$45</p>
+            </div>
+            <div class="card">
+                <img src="Summer Dress.png" style="filter: drop-shadow(0 0 5px #908d62) drop-shadow(0 0 5px #908d62)">
+                <h3>Summer Dress</h3>
+                <p>Light & fresh</p>
+                <p class="price">$38</p>
+            </div>
+            <div class="card">
+                <img src="Party Dress.png" style="margin-top: 150px; filter: drop-shadow(0 0 5px #4f1a20) drop-shadow(0 0 5px #4f1a20)">
+                <h3>Party Dress</h3>
+                <p>Stylish events</p>
+                <p class="price">$80</p>
+            </div>
+        </div>
+
+        <!-- SKIRTS -->
+        <div id="skirts" class="category">
+            <div class="card">
+                <img src="short skirt.png" style=" filter: drop-shadow(0 0 5px black) drop-shadow(0 0 5px black)">
+                <h3>Mini Skirt</h3>
+                <p>Modern look</p>
+                <p class="price">$22</p>
+            </div>
+            <div class="card">
+                <img src="Midi Skirt.png" style=" filter: drop-shadow(0 0 5px white) drop-shadow(0 0 5px white)">
+                <h3>Midi Skirt</h3>
+                <p>Balanced style</p>
+                <p class="price">$28</p>
+            </div>
+            <div class="card">
+                <img src="Long Skirt.png" style=" filter: drop-shadow(0 0 2px #14151a) drop-shadow(0 0 2px #14151a)">
+                <h3>Long Skirt</h3>
+                <p>Elegant flow</p>
+                <p class="price">$32</p>
+            </div>
+            <div class="card">
+                <img src="Pleated Skirt.png" style=" filter: drop-shadow(0 0 5px whitesmoke) drop-shadow(0 0 5px whitesmoke)">
+                <h3>Pleated Skirt</h3>
+                <p>Classic fashion</p>
+                <p class="price">$30</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+     <div class="footer">
+        <div class="boxfooter">
+            <h1 style="margin-top: 40px; ">
+                <ul style="margin-left: 50px;">
+                    <li> Facebook </li>
+
+                    <li>
+                        Instgram </li>
+
+                    <li> Threads </li>
+                </ul>
+            </h1>
+
+            <h4 style="margin-top: 250px;">© 2026 VELVET - All Rights Reserved</h4>
+        </div>
+        <div class="boxfooter">
+            <h1 style="text-align: center; margin-top: 10px;">Quick Links</h1>
+            <h2>
+                <ul style="margin-left: 30px; margin-top: 20px;">
+                    <li style="text-align: left;">HOME</li>
+
+                    <li style="text-align: left;">CATALOG</li>
+
+                    <li style="text-align: left;">ABOUT</li>
+
+                    <li style="text-align: left;">COUNTACT US</li>
+                </ul>
+            </h2>
+
+        </div>
+        <div class="boxfooter">
+            <h1 style="margin-top: 20px;">
+                <center>Velvet</center>
+            </h1>
+            <h2 style="margin-top: 20px;">"At Velvet, your style is an expression of inner elegance. We bring you
+                luxurious pieces to turn every day into a runway of comfort and grace."</h2>
+
+            <div style="border-radius: 30px 0; box-shadow: 0 4px 5px var(--g); border: var(--g) 2px solid;
+ width: 90%; height: 45%; margin-top: 50px; text-align: left;">
+                <h4 style="margin:10px 10px ;"><u>The Schedule</u></h4>
+                <ul style="margin-top: 10px;">
+                    <li style="margin-left: 20px;">
+                        <h5> Monday - Friday: 09:00 AM – 08:00 PM</h5>
+                    </li>
+                   
+                    <li style="margin-left: 20px;">
+                        <h5>Saturday: 10:00 AM – 06:00 PM </h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<script>
+function showCategory(categoryId) {
+    let categories = document.querySelectorAll('.category');
+    categories.forEach(cat => cat.classList.remove('active'));
+    document.getElementById(categoryId).classList.add('active');
+}
+
+  window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.style.backgroundColor = "rgba(250, 235, 232, 0.95)";
+            header.style.height = "80px";
+            header.style.position = "fixed"; 
+            header.style.zIndex = "1000";
+            header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+        } else {
+            header.style.backgroundColor = "var(--a)";
+            header.style.height = "100px";
+            header.style.boxShadow = "none";
+            header.style.position = "static"; 
+        }
+    });
+
+</script>
+</body>
+</html>

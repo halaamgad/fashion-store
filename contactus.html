@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet — Contact Us</title>
+    <style>
+        :root {
+            --a: #faebe8;
+            --b: #ebcebb9a;
+            --g: black;
+            --h: #3f1f10;
+              --x: Copperplate, Papyrus, fantasy;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            font-family: var(--x);
+            color: var(--h);
+            background: var(--b);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* HEADER */
+        .header {
+            width: 100%;
+            height: 100px;
+            background-color: var(--a);
+            color: var(--h);
+            font-family: var(--x);
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-item {
+            margin: 30px 20px;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: var(--h);
+        }
+
+        .header-item:hover {
+            transform: translateY(-3px);
+
+        }
+
+        .websitename {
+            width: 10%;
+            height: 50px;
+            margin-left: 780px;
+            margin-top: 10px;
+            color: var(--h);
+            font-family: var(--x);
+            text-shadow: 0 4px 10px var(--h);
+        }
+
+
+        /* MAIN */
+        .main {
+            background:
+                radial-gradient(circle at 20% 0%, rgba(250,235,232,0.55), transparent 45%),
+                radial-gradient(circle at 90% 100%, rgba(250,235,232,0.4), transparent 50%),
+                var(--b);
+            padding: 88px 0 96px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .page-head { margin-bottom: 64px; }
+        .page-head h1 {
+            color: var(--g);
+            font-family: var(--x);
+            font-size: clamp(36px, 5vw, 64px);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        .page-head p {
+            font-size: 18px;
+            max-width: 640px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+
+        /* FORM */
+        .form-card {
+            background: var(--a);
+            padding: 48px 44px;
+            border: 1px solid rgba(63, 31, 16, 0.06);
+            border-radius: 22px;
+            box-shadow: 0 18px 50px -25px rgba(63, 31, 16, 0.25);
+        }
+        .field { margin-bottom: 26px; }
+        .field label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            margin-bottom: 10px;
+            opacity: 0.85;
+        }
+        .field input, .field select, .field textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(235, 206, 187, 0.18);
+            border: 1px solid rgba(63, 31, 16, 0.18);
+            border-radius: 14px;
+            color: var(--h);
+            font-family: var(--x);
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+        .field input:focus, .field select:focus, .field textarea:focus {
+            border-color: var(--h);
+            background: rgba(250, 235, 232, 0.6);
+            box-shadow: 0 0 0 4px rgba(63, 31, 16, 0.08);
+        }
+        .field textarea { min-height: 150px; resize: vertical; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        .submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--h);
+            color: var(--a);
+            border: none;
+            border-radius: 14px;
+            font-family: var(--x);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 24px -12px rgba(63, 31, 16, 0.6);
+        }
+        .submit:hover {
+            background: #2a1409;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -12px rgba(63, 31, 16, 0.7);
+        }
+
+        .success { text-align: center; padding: 60px 20px; }
+        .success .check {
+            width: 64px; height: 64px;
+            border: 1px solid var(--h);
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 28px; margin-bottom: 24px;
+        }
+        .success h2 {
+            text-transform: uppercase;
+            font-size: 22px; margin-bottom: 12px; font-weight: normal;
+        }
+        .success p { font-size: 16px; opacity: 0.9; }
+
+        /* INFO COLUMN */
+        .info { display: flex; flex-direction: column; gap: 48px; }
+        .info-photo {
+            aspect-ratio: 4 / 3;
+            background: url('atelier.png') center/cover no-repeat, linear-gradient(135deg, #d9b89c, #b89072);
+            border: 1px solid rgba(63, 31, 16, 0.08);
+            border-radius: 22px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 18px 50px -25px rgba(63, 31, 16, 0.3);
+        }
+
+        .info-block h3 {
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        .info-block p { margin-bottom: 12px; opacity: 0.9; font-size: 16px; line-height: 1.7; }
+        .info-block a { transition: opacity 0.2s ease; }
+        .info-block a:hover { text-decoration: underline; opacity: 0.75; }
+
+        .schedule {
+            border-left: 2px solid rgba(63, 31, 16, 0.25);
+            padding: 4px 0 4px 18px;
+        }
+        .schedule .row-line {
+            display: flex; justify-content: space-between;
+            max-width: 320px; margin-bottom: 8px;
+        }
+        .schedule .closed { font-style: italic; opacity: 0.75; }
+
+        .socials { display: flex; gap: 12px; }
+        .socials a {
+            width: 44px; height: 44px;
+            border: 1px solid rgba(63, 31, 16, 0.18);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            text-transform: uppercase; font-size: 11px; letter-spacing: 0.08em;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .socials a:hover { background: var(--h); color: var(--a); transform: translateY(-2px); }
+
+        /* FOOTER */
+  .footer {
+            width: 100%;
+            height: 500px;
+            margin-top: 10px;
+            background-color: var(--a);
+            font-family: var(--x);
+            color: var(--h);
+            clear: both;
+        }
+
+        .boxfooter {
+            width: 28%;
+            height: 300px;
+            margin: 15px 15px;
+            padding: 5px 15px;
+            float: left;
+            font-family: var(--x);
+            color: var(--h);
+        }
+
+        .copyright {
+            font-family: var(--x);
+            font-size: 14px;
+            margin-top: 40px;
+            padding-left: 4px;
+        }
+
+        .tagline {
+            font-family: var(--x);
+            font-size: 18px;
+            line-height: 1.55;
+            margin-bottom: 28px;
+        }
+
+        .schedule-card {
+            border: 2px solid var(--g);
+            border-radius: 30px 0;
+            padding: 16px 20px 20px;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+        }
+        .schedule-card h4 {
+            font-family: var(--x);
+            font-size: 18px;
+            font-weight: normal;
+            text-decoration: underline;
+            margin-bottom: 14px;
+        }
+        .schedule-card ul {
+            list-style: disc;
+            padding-left: 22px;
+        }
+        .schedule-card li {
+            font-family: var(--x);
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: 1fr; gap: 56px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .nav { display: none; }
+        }
+        @media (max-width: 540px) {
+            .row { grid-template-columns: 1fr; }
+            .form-card { padding: 28px 20px; }
+            .header-inner { height: 80px; padding: 0 16px; }
+            .brand-name { font-size: 22px; }
+            .container { padding: 0 16px; }
+            .main { padding: 48px 0; }
+        }
+
+        body { animation: fade 0.7s ease both; }
+        @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+ <div class="header">
+        <a href="Home.html" class="header-item"><strong><u>Home</u></strong></a>
+        <a href="catlog.html" class="header-item"><strong><u>Catalog</u></strong></a>
+        <a href="about.html" class="header-item"><strong><u>About</u></strong></a>
+        <a href="contactus.html" class="header-item"><strong><u>ContactUs</u></strong></a>
+        
+        <div class="websitename">
+            <h1> Velvet
+                <img src="brand.png" alt="" width="30px" height="30px" style="margin-left: 90px; ">
+
+            </h1>
+        </div>
+    </div>
+
+    <main class="main">
+        <div class="container">
+            <div class="page-head">
+                
+                <h1 style="margin-top: 15px;">Get in Touch</h1>
+                <h2 style="width:500px; height: 150px; ">We'd love to hear from you. Whether you're inquiring about a custom piece or need assistance with your order, our atelier is here to help.</h2>
+            </div>
+
+            <div class="grid">
+                <div class="form-card">
+                    <form id="contactForm" novalidate>
+                        <div class="field">
+                            <h4 for="fullName">Full Name</h4>
+                            <input id="fullName" type="text" placeholder="Jane Doe" required minlength="2">
+                        </div>
+                        <div class="row">
+                            <div class="field">
+                                <h4 for="email">Email</h4>
+                                <input id="email" type="email" placeholder="jane@example.com" required>
+                            </div>
+                            <div class="field">
+                                <h4 for="phone">Phone (optional)</h4>
+                                <input id="phone" type="tel" placeholder="+1 ...">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <h4 for="subject">Subject</h4>
+                            <select id="subject" required>
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Support</option>
+                                <option value="press">Press &amp; Collaborations</option>
+                                <option value="custom">Custom Pieces</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <h4 for="message">Message</h4>
+                            <textarea id="message" placeholder="How can we help you?" required minlength="10"></textarea>
+                        </div>
+                        <button type="submit" class="submit"><h2>Send Message</h2></button>
+                    </form>
+
+                    <div id="successState" class="success" style="display:none;">
+                        <div class="check">&#10003;</div>
+                        <h2>Thank you</h2>
+                        <p>We'll be in touch within 1-2 business days.</p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div class="info-photo"><img src="ph con.jpeg" alt="></div>
+
+                    <div class="info-block">
+                        <h1>Visit the Atelier</h1>
+                        <br>
+                        <h2>27 Marais Lane, Studio 4<br>Paris 75004</h2>
+                        <h2><a href="mailto:hello@velvet.studio">hello@velvet.studio</a></h2>
+                        <h2><a href="tel:+33142780000">+33 1 42 78 00 00</a></h2>
+                    </div>
+
+                    <div class="info-block">
+                        <h1>The Schedule</h1>
+                        <br>
+                        <div class="schedule">
+                            <div class="row-line"><span>Monday – Friday</span><span>09:00 AM – 08:00 PM</span></div>
+                            <div class="row-line"><span>Saturday</span><span>10:00 AM – 06:00 PM</span></div>
+                            <div class="row-line"><span>Sunday</span><span class="closed">closed</span></div>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <h1>Follow Us</h1>
+                        <div class="socials">
+                            <a href="#" aria-label="Facebook"><h2>FB</h2></a>
+                            <a href="#" aria-label="Instagram"><h2>IG</h2></a>
+                            <a href="#" aria-label="Threads"><h2>TH</h2></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="footer">
+        <div class="boxfooter">
+            <h1 style="margin-top: 40px; ">
+                <ul style="margin-left: 50px;">
+                    <li> Facebook </li>
+
+                    <li>
+                        Instgram </li>
+
+                    <li> Threads </li>
+                </ul>
+            </h1>
+
+            <h4 style="margin-top: 250px;">© 2026 VELVET - All Rights Reserved</h4>
+        </div>
+        <div class="boxfooter">
+            <h1 style="text-align: center; margin-top: 10px;">Quick Links</h1>
+            <h2>
+                <ul style="margin-left: 30px; margin-top: 20px;">
+                    <li style="text-align: left;">HOME</li>
+
+                    <li style="text-align: left;">CATALOG</li>
+
+                    <li style="text-align: left;">ABOUT</li>
+
+                    <li style="text-align: left;">COUNTACT US</li>
+                </ul>
+            </h2>
+
+        </div>
+        <div class="boxfooter">
+            <h1 style="margin-top: 20px;">
+                <center>Velvet</center>
+            </h1>
+            <h2 style="margin-top: 20px;">"At Velvet, your style is an expression of inner elegance. We bring you
+                luxurious pieces to turn every day into a runway of comfort and grace."</h2>
+
+            <div style="border-radius: 30px 0; box-shadow: 0 4px 5px var(--g); border: var(--g) 2px solid;
+ width: 90%; height: 45%; margin-top: 50px; text-align: left;">
+                <h4 style="margin:10px 10px ;"><u>The Schedule</u></h4>
+                <ul style="margin-top: 10px;">
+                    <li style="margin-left: 20px;">
+                        <h5> Monday - Friday: 09:00 AM – 08:00 PM</h5>
+                    </li>
+                    <br>
+                    <li style="margin-left: 20px;">
+                        <h5>Saturday: 10:00 AM – 06:00 PM </h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('successState');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (!form.checkValidity()) { form.reportValidity(); return; }
+            form.style.display = 'none';
+            success.style.display = 'block';
+        });
+
+
+
+          window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.style.backgroundColor = "rgba(250, 235, 232, 0.95)";
+            header.style.height = "80px";
+            header.style.position = "fixed"; // بيثبت هنا
+            header.style.zIndex = "1000";
+            header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+        } else {
+            header.style.backgroundColor = "var(--a)";
+            header.style.height = "100px";
+            header.style.boxShadow = "none";
+            header.style.position = "static"; // السطر ده اللي ناقص عشان يرجع مكانه الطبيعي
+        }
+    });
+    </script>
+
+</body>
+</html>
